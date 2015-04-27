@@ -1,4 +1,10 @@
-var unindentor = (function () {
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+      define([], factory);
+  } else {
+      root.unindentor = factory(root.b);
+  }
+}(this, function () {
     'use strict';
 
     function unindentElementList(elementList) {
@@ -52,16 +58,14 @@ var unindentor = (function () {
         }
         return line.substr(0, line.indexOf(trimmed[0]));
     }
+    
+    function startsWith(str, prefix) {
+        return str.slice(0, prefix.length) == prefix;
+    }
 
     return {
         unindentElementList: unindentElementList,
         unindentElement: unindentElement,
         unindentText: unindentText
     }
-})();
-
-if (typeof String.prototype.startsWith != 'function') {
-    String.prototype.startsWith = function (str) {
-        return this.slice(0, str.length) == str;
-    };
-}
+}));
