@@ -1,9 +1,9 @@
 (function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-      define([], factory);
-  } else {
-      root.unindentor = factory(root.b);
-  }
+    if (typeof define === 'function' && define.amd) {
+        define([], factory);
+    } else {
+        root.unindentor = factory(root.b);
+    }
 }(this, function () {
     'use strict';
 
@@ -33,7 +33,7 @@
         for (var i = 0; i < lines.length; i++) {
             var line = lines[i];
             if (indentation === false) {
-                var indentation = findIndentation(line);
+                indentation = findIndentation(line);
                 if (!indentation) {
                     continue;
                 }
@@ -41,7 +41,7 @@
             line = unindentLine(line, indentation);
             result.push(line);
         }
-        return result.join('\n');
+        return rtrim(result.join('\n'));
     }
 
     function unindentLine(line, indentation) {
@@ -58,9 +58,13 @@
         }
         return line.substr(0, line.indexOf(trimmed[0]));
     }
-    
+
     function startsWith(str, prefix) {
         return str.slice(0, prefix.length) == prefix;
+    }
+
+    function rtrim(str) {
+        return str.replace(/\s+$/, '');
     }
 
     return {
