@@ -34,7 +34,7 @@
             var line = lines[i];
             if (indentation === false) {
                 indentation = findIndentation(line);
-                if (!indentation) {
+                if (indentation === false) {
                     continue;
                 }
             }
