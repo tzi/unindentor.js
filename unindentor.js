@@ -45,7 +45,7 @@
     }
 
     function unindentLine(line, indentation) {
-        if (line.startsWith(indentation)) {
+        if (startsWith(line, indentation)) {
             line = line.substr(indentation.length);
         }
         return line;
