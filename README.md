@@ -3,11 +3,15 @@ unindentor.js
 
 A small library to remove indentation from `textarea` and `contenteditable` elements.
 
+```sh
+npm install unindentor.js
+```
+
 ```html
 <textarea class="unindent">
-		.main {
-				max-width: 980px;
-		}
+	.main {
+		max-width: 980px;
+	}
 </textarea>
 <script src="unindentor.js"></script>
 <script>
