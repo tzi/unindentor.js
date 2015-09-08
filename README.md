@@ -28,7 +28,6 @@ How to Contribute
 3. Tweet and blog about `unindentor.js` and [Let me know](https://twitter.com/iamtzi) about it.
 4. [Pull requests](https://github.com/tzi/unindentor.js/blob/master/CONTRIBUTING.md) are also highly appreciated.
 
-### Pull Requests
 
 
 Author & Community
